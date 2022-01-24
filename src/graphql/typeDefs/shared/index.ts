@@ -1,0 +1,9 @@
+type Error {
+    path: String
+    message: String
+}
+
+type Success {
+    path: String
+    data: Any
+}
