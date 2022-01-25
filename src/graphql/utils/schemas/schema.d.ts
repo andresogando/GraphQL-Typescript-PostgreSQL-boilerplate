@@ -32,9 +32,9 @@ input: IUserInput;
 interface IUserInput {
 email: string;
 password: string;
-lastName: string;
-firstName: string;
-age: number;
+lastName?: string;
+firstName?: string;
+age?: number;
 }
 
 

@@ -5,5 +5,5 @@ type Error {
 
 type Success {
     path: String
-    data: Any
+    data: String
 }

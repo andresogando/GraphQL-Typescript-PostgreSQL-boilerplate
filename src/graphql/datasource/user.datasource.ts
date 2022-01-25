@@ -1,4 +1,4 @@
-import { User } from "src/models/User";
+import { User } from "src/entity/User";
 import { BaseEntity } from "typeorm";
 
 export default class UserDatasource extends BaseEntity<User> {
