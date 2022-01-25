@@ -17,7 +17,7 @@ Steps to run this project:
     - Jest 
     - PostgreSQL
     - nodemon 
-    - More... (still developing this project as of Jan 23, 2022)
+    - More... 
     
 
 
@@ -27,3 +27,4 @@ Steps to run this project:
 - Authentication 
 - Rate Limiting 
 - Email Confirmation.. etc 
+- public API + Docker? sounds interesting.. 
