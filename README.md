@@ -19,3 +19,11 @@ Steps to run this project:
     - nodemon 
     - More... (still developing this project as of Jan 23, 2022)
     
+
+
+## Soon.. 
+- Redis
+- Social Auth (facebook, twitter, etc..)
+- Authentication 
+- Rate Limiting 
+- Email Confirmation.. etc 
