@@ -3,6 +3,7 @@ import * as bcrypt from "bcrypt";
 import { User } from "../../entity/User";
 import { userAlreadyExistError } from "./shared/errorMessages";
 import { userSchema, formatYupError } from "./utils";
+import { createEmailLink } from "../utils/functions/emailsConfirmUrl";
 
 const userResolver: ResolverMap = {
   Query: {
@@ -10,14 +11,17 @@ const userResolver: ResolverMap = {
   },
 
   Mutation: {
-    register: async (_: any, { input }: GQL.IRegisterOnMutationArguments) => {
+    register: async (
+      _: any,
+      { input }: GQL.IRegisterOnMutationArguments,
+      { redis, request }
+    ) => {
       try {
         await userSchema.validate(input, { abortEarly: false });
       } catch (error) {
-        formatYupError(error);
+        return formatYupError(error);
       }
       const { email, firstName, lastName, age, password } = input;
-
 
       const userAlreadyExist = await User.findOne({
         where: { email },
@@ -36,6 +40,9 @@ const userResolver: ResolverMap = {
       });
 
       await newUser.save();
+
+      createEmailLink(request.url, newUser.id, redis);
+
       return null;
     },
   },

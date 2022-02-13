@@ -22,7 +22,8 @@
     "paths": {
       "@server/connection": ["src/config/startServer.ts"],
       "@resolvers": ["src/graphql/resolvers/index.ts"],
-      "@database": ["src/config/database.connection.ts"]
+      "@database": ["src/config/database.connection.ts"],
+      "@resolvers/errors": ["src/graphql/resolvers/shared/errorMessages.ts"]
     }
   },
   "exclude": ["node_modules"],
